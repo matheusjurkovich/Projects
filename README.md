@@ -1,4 +1,6 @@
-## Projects
+# Projects
 
-Projetos desenvolvidos para aperfeiçoamento de habilidades com JavaScript!
-<a href=“https://matheusjurkovich.github.io/Projects/Stopwatch“>Stopwatch</a>
+###Projetos desenvolvidos para aperfeiçoamento de habilidades com JavaScript!
+
+Stopwatch(https://matheusjurkovich.github.io/Projects/Stopwatch)
+
