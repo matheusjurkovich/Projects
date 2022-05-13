@@ -1,7 +1,8 @@
 window.onload = function () {
 
-  var seconds = 60;
+  var seconds = 00;
   var tens = 00;
+  var minutes = 00;
   var appendTens = document.getElementById("tens")
   var appendSeconds = document.getElementById("seconds")
   var appendMinutes = document.getElementById("minutes")
