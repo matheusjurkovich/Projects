@@ -104,3 +104,43 @@ resultDisplayed = true;
 clear.addEventListener("click", function () {
   input.innerHTML = "";
 });
+
+const inputContainer = document.querySelector('#theme')
+const rootElement = document.documentElement
+
+const lighTheme = {
+  '--main': '#fff',
+  '--input': '#fff',
+  '--calculator-body': '#fff',
+  '--operators': '#ddd',
+  '--numbers': '#f9f9f9',
+  '--letters': '#000000',
+}
+
+const darkTheme = {
+  '--main': '#000000',
+  '--input': '#4b4a4a',
+  '--calculator-body': '#4b4a4a',
+  '--operators': '#4b4a4a',
+  '--numbers': '#000000',
+  '--letters': '#ffffff',
+}
+
+inputContainer.addEventListener('change' , function() {
+  const isChecked = inputContainer.checked
+  if(isChecked) {
+    changeTheme(darkTheme)
+  }else {
+    changeTheme(lighTheme)
+  }
+})
+
+function changeTheme(theme) {
+  for (let prop in theme) {
+    changeProperty(prop, theme[prop])
+  }
+}
+
+function changeProperty(property, value) {
+  rootElement.style.setProperty(property, value)
+}
