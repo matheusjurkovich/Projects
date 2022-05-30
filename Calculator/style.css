@@ -22,6 +22,83 @@
   margin: 2rem;
 }
 
+.dark_mode {
+  position: absolute;
+  top: 0;
+  right: 110px;
+  margin-top: 1.8rem;
+}
+
+.light_mode {
+  position: absolute;
+  top: 0;
+  right: 110px;
+  margin-top: 1.8rem;
+  fill: white;
+}
+
+.hidden {
+  display: none;
+}
+
+/*----- BOTAO SWITCH---------*/
+.switch__container {
+  margin: 1px auto;
+  width: 120px;
+}
+
+.switch {
+  visibility: hidden;
+  position: absolute;
+  margin-left: -9999px;
+}
+
+.switch + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.switch--shadow + label {
+  padding: 2px;
+  width: 70px;
+  height: 40px;
+  background-color: #dddddd;
+  border-radius: 60px;
+}
+.switch--shadow + label:before,
+.switch--shadow + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: '';
+}
+.switch--shadow + label:before {
+  right: 1px;
+  background-color: #f1f1f1;
+  border-radius: 60px;
+  transition: background 0.4s;
+}
+.switch--shadow + label:after {
+  width: 40px;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s;
+}
+.switch--shadow:checked + label:before {
+  background-color: #8ce196;
+}
+.switch--shadow:checked + label:after {
+  transform: translateX(28px);
+}
+
+/*----- FIM BOTAO SWITCH---------*/
+
 body {
   display: flex;
   justify-content: center;
@@ -37,13 +114,19 @@ body {
   background-color: var(--calculator-body);
 }
 
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--letters);
+}
+
 .input {
   display: flex;
   justify-content: right;
   align-items: center;
   padding-right: 1rem;
   border: 1px solid #ddd;
-  border-radius: .2rem;
+  border-radius: 0.4rem;
   height: 4rem;
   font-size: 2.5rem;
   overflow-x: auto;
@@ -61,16 +144,17 @@ body {
 .operators div {
   display: inline-block;
   border: 1px solid #bbb;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   width: 4.65rem;
   text-align: center;
   font-size: 2rem;
-  padding: .2rem;
+  padding: 0.2rem;
   margin: 20px 4px 10px 0;
   cursor: pointer;
   background-color: var(--operators);
   color: var(--letters);
-  transition: border-color 0.2s ease-in-out, background-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s ease-in-out, background-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .operators div:hover {
@@ -90,12 +174,13 @@ aside {
 }
 
 .numbers div {
+  font-size: 1.2rem;
   display: inline-block;
   border: 1px solid #ddd;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   width: 5rem;
   text-align: center;
-  padding: 10px;
+  padding: 8px;
   margin: 10px 4px 10px 0;
   cursor: pointer;
   background-color: var(--numbers);
@@ -119,7 +204,7 @@ aside {
 .equal {
   display: inline-block;
   border: 1px solid #3079ed;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   width: 17%;
   text-align: center;
   padding: 100px 10px;

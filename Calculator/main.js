@@ -1,9 +1,9 @@
 var input = document.getElementById("input"),
-number = document.querySelectorAll(".numbers div"),
-operator = document.querySelectorAll(".operators div"), 
-result = document.getElementById("result"), 
-clear = document.getElementById("clear"), 
-resultDisplayed = false; 
+  number = document.querySelectorAll(".numbers div"),
+  operator = document.querySelectorAll(".operators div"),
+  result = document.getElementById("result"),
+  clear = document.getElementById("clear"),
+  resultDisplayed = false;
 
 for (var i = 0; i < number.length; i++) {
   number[i].addEventListener("click", function (e) {
@@ -53,52 +53,52 @@ for (var i = 0; i < operator.length; i++) {
 
 result.addEventListener("click", function () {
 
-var inputString = input.innerHTML;
+  var inputString = input.innerHTML;
 
-var numbers = inputString.split(/\+|\-|\×|\÷/g);
+  var numbers = inputString.split(/\+|\-|\×|\÷/g);
 
 
-var operators = inputString.replace(/[0-9]|\./g, "").split("");
+  var operators = inputString.replace(/[0-9]|\./g, "").split("");
 
-console.log(inputString);
-console.log(operators);
-console.log(numbers);
-console.log("----------------------------");
-var divide = operators.indexOf("÷");
-while (divide != -1) {
-  numbers.splice(divide, 2, numbers[divide] / numbers[divide + 1]);
-  operators.splice(divide, 1);
-  divide = operators.indexOf("÷");
-}
+  console.log(inputString);
+  console.log(operators);
+  console.log(numbers);
+  console.log("----------------------------");
+  var divide = operators.indexOf("÷");
+  while (divide != -1) {
+    numbers.splice(divide, 2, numbers[divide] / numbers[divide + 1]);
+    operators.splice(divide, 1);
+    divide = operators.indexOf("÷");
+  }
 
-var multiply = operators.indexOf("×");
-while (multiply != -1) {
-  numbers.splice(multiply, 2, numbers[multiply] * numbers[multiply + 1]);
-  operators.splice(multiply, 1);
-  multiply = operators.indexOf("×");
-}
+  var multiply = operators.indexOf("×");
+  while (multiply != -1) {
+    numbers.splice(multiply, 2, numbers[multiply] * numbers[multiply + 1]);
+    operators.splice(multiply, 1);
+    multiply = operators.indexOf("×");
+  }
 
-var subtract = operators.indexOf("-");
-while (subtract != -1) {
-  numbers.splice(subtract, 2, numbers[subtract] - numbers[subtract + 1]);
-  operators.splice(subtract, 1);
-  subtract = operators.indexOf("-");
-}
+  var subtract = operators.indexOf("-");
+  while (subtract != -1) {
+    numbers.splice(subtract, 2, numbers[subtract] - numbers[subtract + 1]);
+    operators.splice(subtract, 1);
+    subtract = operators.indexOf("-");
+  }
 
-var add = operators.indexOf("+");
-while (add != -1) {
-  numbers.splice(
-    add,
-    2,
-    parseFloat(numbers[add]) + parseFloat(numbers[add + 1])
-  );
-  operators.splice(add, 1);
-  add = operators.indexOf("+");
-}
+  var add = operators.indexOf("+");
+  while (add != -1) {
+    numbers.splice(
+      add,
+      2,
+      parseFloat(numbers[add]) + parseFloat(numbers[add + 1])
+    );
+    operators.splice(add, 1);
+    add = operators.indexOf("+");
+  }
 
-input.innerHTML = numbers[0];
+  input.innerHTML = numbers[0];
 
-resultDisplayed = true;
+  resultDisplayed = true;
 });
 
 clear.addEventListener("click", function () {
@@ -107,6 +107,8 @@ clear.addEventListener("click", function () {
 
 const inputContainer = document.querySelector('#theme')
 const rootElement = document.documentElement
+const moon = document.querySelector('.dark_mode')
+const sun = document.querySelector('.light_mode')
 
 const lighTheme = {
   '--main': '#fff',
@@ -118,7 +120,7 @@ const lighTheme = {
 }
 
 const darkTheme = {
-  '--main': '#000000',
+  '--main': '#1c1c1c',
   '--input': '#4b4a4a',
   '--calculator-body': '#4b4a4a',
   '--operators': '#4b4a4a',
@@ -126,12 +128,16 @@ const darkTheme = {
   '--letters': '#ffffff',
 }
 
-inputContainer.addEventListener('change' , function() {
+inputContainer.addEventListener('change', function () {
   const isChecked = inputContainer.checked
-  if(isChecked) {
+  if (isChecked) {
     changeTheme(darkTheme)
-  }else {
+    sun.classList.remove('hidden')
+    moon.classList.add('hidden')
+  } else {
     changeTheme(lighTheme)
+    sun.classList.add('hidden')
+    moon.classList.remove('hidden')
   }
 })
 
