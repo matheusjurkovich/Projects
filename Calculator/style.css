@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  padding: 1.5rem;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+
+.input {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-right: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  height: 4rem;
+  font-size: 2.5rem;
+  overflow-x: auto;
+  transition: all 0.2s ease-in-out;
+}
+
+.input:hover {
+  border: 1px solid #bbb;
+  -webkit-box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.operators div {
+  display: inline-block;
+  border: 1px solid #bbb;
+  border-radius: .2rem;
+  width: 4.65rem;
+  text-align: center;
+  font-size: 2rem;
+  padding: .2rem;
+  margin: 20px 4px 10px 0;
+  cursor: pointer;
+  background-color: #ddd;
+  transition: border-color 0.2s ease-in-out, background-color 0.2s, box-shadow 0.2s;
+}
+
+.operators div:hover {
+  background-color: #ddd;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-color: #aaa;
+}
+
+.operators div:active {
+  font-weight: bold;
+  background-color: rgb(180, 178, 178);
+}
+
+aside {
+  display: inline-block;
+}
+
+.numbers div {
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: .2rem;
+  width: 5rem;
+  text-align: center;
+  padding: 10px;
+  margin: 10px 4px 10px 0;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  transition: border-color 0.2s ease-in-out, background-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.numbers div:hover {
+  background-color: #f1f1f1;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-color: #bbb;
+}
+
+.numbers div:active {
+  font-weight: bold;
+  background-color: #cac8c8;
+}
+
+.equal {
+  display: inline-block;
+  border: 1px solid #3079ed;
+  border-radius: .2rem;
+  width: 17%;
+  text-align: center;
+  padding: 100px 10px;
+  margin: 10px 6px 10px 0;
+  vertical-align: top;
+  cursor: pointer;
+  color: #fff;
+  background-color: #4d90fe;
+  transition: all 0.2s ease-in-out;
+}
+
+div.equal:hover {
+  background-color: #307cf9;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-color: #1857bb;
+}
+
+div.equal:active {
+  font-weight: bold;
+  background-color: #152f5a;
+}
