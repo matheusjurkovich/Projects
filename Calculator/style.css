@@ -87,11 +87,11 @@
   width: 40px;
   background-color: #fff;
   border-radius: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.096);
   transition: all 0.4s;
 }
 .switch--shadow:checked + label:before {
-  background-color: #8ce196;
+  background-color: #4d90fe;
 }
 .switch--shadow:checked + label:after {
   transform: translateX(28px);
