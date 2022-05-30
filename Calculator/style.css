@@ -43,7 +43,7 @@ body {
   align-items: center;
   padding-right: 1rem;
   border: 1px solid #ddd;
-  border-radius: 1px;
+  border-radius: .2rem;
   height: 4rem;
   font-size: 2.5rem;
   overflow-x: auto;

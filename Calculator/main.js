@@ -122,7 +122,7 @@ const darkTheme = {
   '--input': '#4b4a4a',
   '--calculator-body': '#4b4a4a',
   '--operators': '#4b4a4a',
-  '--numbers': '#000000',
+  '--numbers': '#4b4a4a',
   '--letters': '#ffffff',
 }
 
