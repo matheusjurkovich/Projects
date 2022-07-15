@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>CoutdownTimer</title>
+  </head>
+  <body class="light-theme">
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+    <main>
+        <section id="info">
+          <h1>Ready to launch in...</h1>
+          <div id="countTime">
+            <div id="references">
+              <p>Dias</p>
+              <p>Horas</p>
+              <p>Minutos</p>
+              <p>Segundos</p>
+            </div>
+            <h2 id="countDown">Loading...</h2>
+          </div>
+          <p>Inscreva-se para saber mais sobre o lançamento</p>
+          <button id="subscribe">Inscreva-se</button>
+        </section>
+        <img src="./assets/rocket.svg" alt="">
+    </main>
+    <div id="modal">
+      <div id="modal-content">
+        <span class="close">&times;</span>
+
+        <div id="inscricao">
+          <h1>Se inscreva para receber as atualizações recentes!</h1>
+          <form action="" method="">
+            <label>Nome:</label>
+            <input type="text" name="userName" id="userName" placeholder="Digite seu nome" required>
+            <label>Email:</label>
+            <input type="email" name="useEmail" id="userEmail" placeholder="Digite seu email" required>
+            <label>Telefone:</label>
+            <input type="tel" name="userCel" id="userCel" placeholder="xxxxx-xxxx" maxlength="10">
+            <input type="submit" id="submitForm" value="Enviar">
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

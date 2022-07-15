@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+.light-theme {
+  --black: #4d4c59;
+  --purple: #6c63ff;
+  --light-grey: #c8c8c8;
+  --text-color: #9c9ab6;
+  --bg-color: #ffffff;
+  --close-button: #000000;
+  transition: 0.5s;
+}
+
+.dark-theme {
+  --black: #d6d5e6;
+  --purple: #6c63ff;
+  --light-grey: #c8c8c8;
+  --text-color: #9c9ab6;
+  --bg-color: #302b2b;
+  --close-button: #ffffff;
+  transition: 0.5s;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  background: url(./assets/top-image.svg), url(./assets/bottom-image.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
+  background-size: 100vw, 100vw;
+  background-color: var(--bg-color)
+}
+
+/*============  SITE LAYOUT  ============ */
+
+main {
+  display: flex;
+  gap: 8.2rem;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+main img {
+  width: 36%;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 52rem;
+  height: 35rem;
+}
+
+#info h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 54px;
+  letter-spacing: 0.105em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+#countTime #references {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5rem;
+  padding-right: 2rem;
+}
+
+#countTime #references p {
+  color: var(--light-grey);
+}
+
+#countTime #countDown {
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 108px;
+  color: var(--black);
+  width: 52rem;
+  display: flex;
+  justify-content: center;
+}
+
+#info p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--text-color);
+}
+
+#info button {
+  border: none;
+  background-color: var(--purple);
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+  padding-inline: 3.2rem;
+  padding-block: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#info button:hover {
+  filter: brightness(1.2);
+}
+
+#info button:active {
+  filter: brightness(1);
+}
+
+/*============  SWITCH  ============ */
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  top: 2rem;
+  right: 5rem;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+  background-size: 2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--purple);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background: white url('https://i.ibb.co/FxzBYR9/night.png');
+  background-size: 2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*============  MODAL  ============ */
+
+#modal {
+  /* display: none; */
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+#modal-content {
+  position: relative;
+  background-color: var(--bg-color);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 70%;
+  height: 85%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 1rem;
+  border: 0;
+
+  -webkit-animation-name: openModal;
+  -webkit-animation-duration: 0.4s;
+  animation-name: openModal;
+  animation-duration: 0.4s;
+}
+
+@-webkit-keyframes openModal {
+  from {transform: scale(0); opacity:0}
+  to {transform: scale(1); opacity:1}
+}
+
+@keyframes openModal {
+  from {transform: scale(0); opacity:0}
+  to {transform: scale(1); opacity:1}
+}
+
+.close {
+  color: var(--close-button);
+  float: right;
+  margin-right: 1.2rem;
+  font-size: 3rem;
+}
+
+.close:hover,
+.close:focus {
+  filter: brightness(0.8);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*============  FORMULÁRIO MODAL  ============ */
+
+#inscricao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#inscricao h1 {
+  display: inline;
+  width: 50rem;
+  color: var(--close-button);
+}
+
+#modal #modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 40rem;
+}
+
+#modal #modal-content form label {
+  color: var(--close-button);
+}
+
+#modal #modal-content form #userName, #userEmail, #userCel {
+  width: 30rem;
+  padding: 1rem;
+  border: 0;
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.274);
+  border-radius: 1rem;
+}
+
+#modal #modal-content form #submitForm {
+  margin-top: 3rem;
+  border: 0;
+  background-color: var(--purple);
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+  padding-inline: 3.2rem;
+  padding-block: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#modal #modal-content form #submitForm:hover {
+  filter: brightness(1.2);
+}
+
+#modal #modal-content form #submitForm:active {
+  filter: brightness(1);
+}
