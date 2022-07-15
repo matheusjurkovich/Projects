@@ -61,7 +61,7 @@ main img {
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  width: 52rem;
+  width: 53rem;
   height: 35rem;
 }
 
@@ -90,7 +90,7 @@ main img {
   font-size: 72px;
   line-height: 108px;
   color: var(--black);
-  width: 52rem;
+  width: 53rem;
   display: flex;
   justify-content: center;
 }
