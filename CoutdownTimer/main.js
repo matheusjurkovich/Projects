@@ -38,5 +38,5 @@ const closeModal = document.querySelector('.close')
 const subscribeButton = document.querySelector('#subscribe')
 
 
-subscribeButton.onclick = () => modal.style.display = "block";// Fecha Modal
-closeModal.onclick = () => modal.style.display = "none";// Abre Modal
+subscribeButton.onclick = () => modal.style.display = "block";// Abre Modal
+closeModal.onclick = () => modal.style.display = "none";// Fecha Modal
