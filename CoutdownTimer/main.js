@@ -21,7 +21,7 @@ let x = setInterval(function () {
 
 const switchButton = document.querySelector('.switch input')
 
-switchButton.addEventListener('change', function () {
+switchButton.addEventListener('change', () => {
   const isChecked = switchButton.checked
   if (isChecked) {
     document.body.classList.remove('light-theme')
