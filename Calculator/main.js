@@ -110,6 +110,10 @@ const rootElement = document.documentElement
 const moon = document.querySelector('.dark_mode')
 const sun = document.querySelector('.light_mode')
 
+window.onload = function () {
+  getThemeFromLocalStorage()
+}
+
 const lighTheme = {
   '--main': '#fff',
   '--input': '#fff',
@@ -145,8 +149,32 @@ function changeTheme(theme) {
   for (let prop in theme) {
     changeProperty(prop, theme[prop])
   }
+  saveThemToLocalStorage(theme)
 }
 
 function changeProperty(property, value) {
   rootElement.style.setProperty(property, value)
+}
+
+function saveThemToLocalStorage(theme) {
+  localStorage.setItem('theme', JSON.stringify(theme))
+}
+
+function getThemeFromLocalStorage() {
+  const theme = JSON.parse(localStorage.getItem('theme'))
+  if (isThemeEqual(theme, darkTheme)) {
+    inputContainer.checked = true
+    sun.classList.remove('hidden')
+    moon.classList.add('hidden')
+  }
+  changeTheme(theme)
+}
+
+function isThemeEqual(theme1, theme2) {
+  for (let prop in theme1) {
+    if (theme1[prop] !== theme2[prop]) {
+      return false
+    }
+  }
+  return true
 }
