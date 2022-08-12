@@ -1,6 +1,6 @@
 // Atualiza a cada 1 seg
 let x = setInterval(function () {
-  let countDownDate = new Date("Dec 5, 2022 23:59:59").getTime();
+  let countDownDate = new Date("Dec 31, 2022 23:59:59").getTime();
   let now = new Date().getTime();
   let distance = countDownDate - now;
 
@@ -21,7 +21,7 @@ let x = setInterval(function () {
 
 const switchButton = document.querySelector('.switch input')
 
-switchButton.addEventListener('change', function () {
+switchButton.addEventListener('change', () => {
   const isChecked = switchButton.checked
   if (isChecked) {
     document.body.classList.remove('light-theme')
